@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+     padding: 0; 
+     box-sizing: border-box; 
+}
+
+
+ h4{
+    color: white;
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+
+
+.queto-card{
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5%;
+    background: darkblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+.queto-card .queto{
+
+    display: none;
+}
+.favorites{
+    display: flex;
+    margin-top:10px;
+}
+.favorite-btn{
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: #ddd;
+    color: darkblue;
+    border: 1px solid white;
+}
+.favorite-displayBtn{
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: #ddd;
+    color: darkblue;
+    border: 1px solid white;
+    margin-left: 10px;
+}
+.block{
+    display: block;
+    background: white;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 12px;
+    margin-top: 15px;
+
+}
+
+
+.btn{
+    padding: 10px 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background: #ddd;
+    color: darkblue;
+    border: 1px solid white;
+}
+.question-card h4{
+    color:white;
+    font-size: 2em;
+    margin-bottom: 15px;
+
+}
+

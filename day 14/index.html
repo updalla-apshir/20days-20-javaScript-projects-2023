@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+                
+                <form id="loginForm">
+                    <div class="input-field">
+                        <input type="text" id="loginUsername" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="input-field button">
+                        <button type="submit" class="btn">Login</button>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link">Signup Now</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Registration</span>
+
+                <form id="registrationForm">
+                    <div class="input-field">
+                        <input type="text" id="regUsername" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="regEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="regPassword" placeholder="Create a password" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="confirmPassword" placeholder="Confirm a password" required>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon">
+                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field button">
+                        <button type="submit" class="btn">Signup</button>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const loginLink = document.querySelector(".login-link");
+    const signupLink = document.querySelector(".signup-link");
+    const container = document.querySelector(".container");
+
+    loginLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        container.classList.remove("active");
+    });
+
+    signupLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        container.classList.add("active");
+    });
+
+    const loginForm = document.getElementById("loginForm");
+    const registrationForm = document.getElementById("registrationForm");
+
+
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const loginUsername = document.getElementById("loginUsername").value;
+        const loginPassword = document.getElementById("loginPassword").value;
+
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+        const user = users.find(user => user.email === loginUsername && user.password === loginPassword);
+
+
+        if (user) {
+            alert("Login successful!");
+
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Invalid username or password. Please try again.");
+            location.reload();
+        }
+    });
+
+
+    registrationForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const regUsername = document.getElementById("regUsername").value;
+        const regEmail = document.getElementById("regEmail").value;
+        const regPassword = document.getElementById("regPassword").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (regPassword !== confirmPassword) {
+            alert("Passwords do not match. Please try again.");
+            return;
+        }
+
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+        const existingUser = users.find(user => user.email === regEmail);
+        if (existingUser) {
+            alert("This email already exists. Please choose another.");
+            return;
+        }
+
+
+        users.push({ email: regEmail, password: regPassword });
+
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Registration successful! You can now login.");
+        location.reload();
+    });
+});
+    </script>
+</body>
+</html>

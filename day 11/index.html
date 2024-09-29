@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Text Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="toolbar">
+        <button onclick="formatText('bold')"><b>B</b></button>
+        <button onclick="formatText('italic')"><i>I</i></button>
+        <button onclick="formatText('underline')"><u>U</u></button>
+        <button onclick="formatText('strikeThrough')"><s>S</s></button>
+        <button onclick="formatText('insertOrderedList')">OL</button>
+        <button onclick="formatText('insertUnorderedList')">UL</button>
+        <button onclick="formatText('justifyLeft')">Align Left</button>
+        <button onclick="formatText('justifyCenter')">Justify Center</button>
+        <button onclick="formatText('justifyRight')">Align Right</button>
+        <button onclick="formatText('justifyFull')">Justify</button>
+        <select onchange="formatText('formatBlock',this.value)">
+            <option value="H1">H1</option>
+            <option value="H2">H2</option>
+            <option value="H3">H3</option>
+            <option value="H4">H4</option>
+            <option value="H5">H5</option>
+            <option value="H6">H6</option>
+            <option value="p">Paragraph</option>
+        </select>
+        <select onchange="formatText('fontName', this.value)">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+        </select>
+        <select onchange="formatText('fontSize', this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+        <input type="color" onchange="formatText('foreColor',this.value)">
+        <input type="color" onchange="formatText('hiliteColor',this.value)">
+        <button onclick="undo()">Undo</button>
+        <button onclick="redo()">Redo</button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+    <script src="app.js"></script>
+</body>
+
+</html>

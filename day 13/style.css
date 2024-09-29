@@ -1,0 +1,94 @@
+body{
+    background: #6759ff;
+}
+.container{
+    background: #fff;
+    margin: 140px auto;
+    max-width: 210px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.dice-wrapper{
+    display: inline-block;
+}
+
+button{
+    background: #6759ff;
+    color: #fff;
+    padding: 7px;
+    border: 1px solid #6759ff;
+    border-radius: 4px;
+}
+
+.die{
+    width: 120px;
+    height: 120px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    position: relative;
+    background: #fff;
+}
+
+.dot{
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+}
+
+#dot-1{
+    top: 15px;
+    left: 15px;
+}
+
+#dot-2{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#dot-3{
+    bottom: 15px;
+    left: 15px;
+}
+
+#dot-4{
+    top: 15px;
+    right: 15px;
+}
+
+#dot-5{
+    bottom: 15px;
+    right: 15px;
+}
+
+#dot-6{
+    top: 50%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+}
+#dot-6::before{
+    content: '';
+    width: 20px;
+    background: #000;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    right: 297%;
+    transform: translate(-50%,-50%);
+}
+@keyframes shake{
+    0%{transform: rotate(0);}
+    25%{transform: rotate(15deg);}
+    50%{transform: rotate(-15deg);}
+    75%{transform: rotate(15deg);}
+    100%{transform: rotate(0);}
+}
+
+.die.shake{
+    animation: shake 1s ease-in-out;
+}

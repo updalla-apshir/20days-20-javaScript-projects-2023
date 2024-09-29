@@ -1,0 +1,104 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to left,#4cfad7,#4bfa60);
+}
+
+.container{
+    background: #fff;
+    max-width: 400px;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+button{
+    background: #3c87ff;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 7px 20px;
+    font-size: 1rem;
+}
+
+h1{
+    text-align: center;
+    font-size: 1.8em;
+}
+
+input[type="text"]{
+    width: 70%;
+    padding: 6px;
+    padding-left: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    gap: 19px;
+    padding: 15px 0;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter span.active{
+    color: #3c87ff;
+}
+.filter span{
+    cursor: pointer;
+    margin: 0 4px;
+    font-size: 17px;
+}
+.controls .btnDelete{
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    padding:6px 12px;
+    background: #3c87ff;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.task-box{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    border-bottom: 1px solid #ddd;
+}
+.task label{
+    display: flex;
+}
+.right-task .fa-file-pen{
+    background: #3c87ff;
+    color: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    margin: 0 7px;
+}
+.right-task .fa-trash{
+    background: red;
+    color: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+.filter span.active{
+    color: #3c87ff;
+}
+.task label p.checked{
+    text-decoration: line-through;
+}

@@ -1,0 +1,21 @@
+#toolbar{
+    margin-bottom: 10px;
+}
+
+button{
+    margin-right: 5px;
+    background: #6759ff;
+    color: #fff;
+    padding: 7px;
+    border: none;
+    border-radius: 6px;
+}
+
+#editor{
+    width: 90%;
+    height: 300px;
+    border: 2px solid #6759ff;
+    padding: 5px;
+    overflow-y: auto;
+    outline: #6759ff;
+}

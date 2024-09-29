@@ -1,0 +1,29 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px 20px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1),5px 5px 15px rgba(0,0,0,0.1),5px 5px 15px rgba(0,0,0,0.1);
+}
+
+input[type="text"]{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+p{
+    line-height: 1.6;
+}
+
+span.higlight{
+    background: yellow;
+    font-weight: bold;
+}

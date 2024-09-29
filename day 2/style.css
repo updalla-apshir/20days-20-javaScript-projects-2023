@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    margin: 50px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.wrapper li, .add-box{
+    background: #55529e;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+    min-width: 265px;
+    word-wrap: break-word;
+    max-width: 300px;
+}
+.add-box, .icon,.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.add-box{
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+
+}
+.add-box .icon{
+    width: 78px;
+    height: 78px;
+    color: #fff;
+    font-size: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    border: 2px dashed #fff;
+}
+.add-box p{
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+}
+.note p{
+    font-size: 23px;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+}
+.note span{
+    font-size: 16px;
+    padding-bottom: 10px;
+
+}
+.wrapper .note{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.note .bottom{
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+.bottom span{
+    color: #fff;
+    font-size: 14px;
+
+}
+.bottom{
+    position: relative;
+}
+.note{
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.output{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+}

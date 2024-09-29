@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+textarea {
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+}
+
+#char-count {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    left: 58%;
+    top: 60%;
+
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.charError{
+    color: red !important;
+
+}

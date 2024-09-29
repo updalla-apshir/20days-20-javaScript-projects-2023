@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <input type="checkbox" id="toggler">
+    <div class="side">
+        <li class="li">
+            <span class="icon"><i class="fa fa-school"></i></span>
+            <span class="text">SOMTAC</span>
+        </li>
+        <ul>
+            <li>
+            <li class="dropdown">
+                <span class="icon"><i class="fa fa-home"></i></span>
+                <span class="text">
+                    <label for="dropdown">Managements
+                        <i class="fa fa-caret-down"></i></span>
+                </label>
+            </li>
+            <input type="checkbox" id="dropdown">
+
+            <div class="dropdownMenu" id="managementDropdown">
+                <ul>
+                    <li onclick="showedStudentForm()"> <span> <i class="far fa-circle nav-icon"></i> </span> Student
+                        Management </li>
+                    <li onclick="showcourseCard()"> <span><i class="far fa-circle nav-icon"></i></span>Course Management
+                    </li>
+                    <li onclick="showedsubjectForm()"> <span> <i class="far fa-circle nav-icon"></i> </span>Subject &
+                        Class</li>
+                </ul>
+            </div>
+            <li onclick="attendeceForm()">
+                <span class="icon"><i class="fa fa-solid fa-bell"></i></span>
+                <span class="text">Attendence</span>
+            </li>
+            <li onclick="showFeedback()">
+                <span class="icon"> <i class="fa fas fa-table"></i></span>
+                <span class="text">Feedback Messege</span>
+            </li>
+            <li onclick="showResult()">
+                <span class="icon"><i class="fa fa-book"></i></span>
+                <span class="text">Result Management</span>
+            </li>
+            <li onclick="showedLeaved()">
+                <span class="icon"><i class="fa fa-fa-solid fa-person-walking-arrow-right"></i></span>
+                <span class="text">Student Leave</span>
+            </li>
+            <li onclick="feeForm()">
+                <span class="icon"><i class="fa fa-money-bill"></i></span>
+                <span class="text">Fee Management</span>
+            </li>
+            <li onclick="viewResult()">
+                <span class="icon"><i class="fa fa-file"></i></span>
+                <span class="text">View Results</span>
+            </li>
+            <li onclick="sendMessage()">
+                <span class="icon"><i class="fa-solid fa-message"></i></span>
+                <span class="text">Send Message</span>
+            </li>
+            <hr>
+            <li>
+                <span class="icon"><a href="./login/index.html"><i class="fa fa-sign-out"></i></span>
+                <span class="text">Logout</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="topbar">
+            <div class="toggler">
+                <label for="toggler">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </div>
+            <div class="nav">
+                <h5><a href="#">Dashboard</a></h5>
+                <!-- <h5><a href="#">Contact</a></h5> -->
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search Something!">
+                <i class="fa fa-search"></i>
+            </div>
+
+        </div>
+        <section class="content">
+            <div class="small-box">
+                <div class="inner">
+                    <h3>150</h3>
+                    <p>New Orders</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+
+            <div class="small-box">
+                <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <p>Bounce Rate</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-chart-bar"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+
+            <div class="small-box">
+                <div class="inner">
+                    <h3>44</h3>
+                    <p>Student Management</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user-plus"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+
+            <div class="small-box">
+                <div class="inner">
+                    <h3>65</h3>
+                    <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-chart-pie"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+
+
+
+
+
+
+        </section>
+
+        <div class="card" id="studentForm">
+            <div class="card-header">
+                <h5 class="card-title">Add New Student</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="fullname">Fullname</label>
+                        <input type="text" id="fullname" placeholder="Enter your fullname">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone No:</label>
+                        <input type="text" id="phone" placeholder="Enter phone No">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm">Confirm Password</label>
+                        <input type="password" id="confirm" placeholder="Confirm the password">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentCourse">Course</label>
+                        <select id="studentCourse">
+                            <option value="" selected disabled>Select course</option>
+
+                        </select>
+                        <div class="form-group">
+                            <label>Class</label>
+                            <select id="studentClass">
+                                <option value="" selected disabled>Select class</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dor">Date Register:</label>
+                            <input type="date" id="dor" placeholder="date">
+                        </div>
+                        <div class="image-upload">
+                            <label for="file" class="file-label">Choose File</label>
+                            <input type="file" id="file" class="file-input">
+                            <button type="button" class="file-btn">Browse</button>
+                        </div>
+                        <button type="submit" id="btnStudent" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+
+        <table class="custom-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+
+                    <th>photo</th>
+                    <th>ID</th>
+                    <th>Fullname</th>
+                    <th>phone</th>
+                    <th>password</th>
+                    <th>Date Register</th>
+                    <th>Course</th>
+                    <th>Class</th>
+                    <th>Reg No</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody id="studentTbody">
+
+
+                <tr>
+
+
+
+                </tr>
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="subjectClassCard" id="subjectClassCard">
+
+        <div class="card-header">
+            <h5 class="card-title">Add New Class And Subject</h5>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="classRoom">Class </label>
+                    <input type="text" class="form-control" id="classSubject" placeholder="Enter class Name">
+                </div>
+                <div class="form-group">
+                    <label for="subjectName">Subject Name</label>
+                    <input type="text" class="form-control" id="subjectName" placeholder="Enter subject name">
+                </div>
+                <div class="form-group">
+                    <label for="teacherName">Teacher Name</label>
+                    <input type="text" class="form-control" id="teacherName" placeholder="Enter teacher name"
+                        id="teacher">
+                </div>
+                <div class="form-group">
+                    <label for="schedule">Schedule:</label>
+                    <div class="form">
+                        <label>days of the week</label>
+                        <select class="form-control" id="daysOftheWeek">
+                            <option value="" selected disabled>select days of the week</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <label for="startTime">Start Time</label>
+                        <input type="time" class="form-control" placeholder="Enter start time" id="startTime">
+                    </div>
+                    <div class="form">
+                        <label for="endTime">End Time</label>
+                        <input type="time" class="form-control" placeholder="Enter end time" id="endTime">
+                    </div>
+                </div>
+            </form>
+
+
+
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn" id="subjectClassbtn">Save</button>
+        </div>
+        <table class="custom-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+
+                    <th>ID</th>
+                    <th>Class Name</th>
+                    <th>Subject Name</th>
+                    <th>Teacher Name</th>
+                    <th>Days of the Week</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Action</th>
+
+
+                </tr>
+            </thead>
+            <tbody id="subjectClassTbody">
+
+
+                <tr>
+
+
+
+                </tr>
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="courseCard" id="courseCard">
+
+        <div class="card-header">
+            <h5 class="card-title">Add New Course </h5>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Course Name</label>
+                        <input type="text" class="form-control" id="courseName" placeholder="Enter Course name">
+                    </div>
+                    <div class="form-group">
+                        <label>Subjects: </label>
+                        <select class="form-control" id="subjectCourses">
+                            <option value="" selected disabled>Select No of Subjects</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Session Year</label>
+                        <select class="form-control" id="session">
+                            <option value="" selected disabled>Select Session Year</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                            <option value="2025-2026">2025-2026</option>
+                            <option value="2026-2027">2026-2027</option>
+                            <option value="2027-2028">2027-2028</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Term</label>
+                        <select class="form-control" id="term">
+                            <option value="" selected disabled>Select The Term</option>
+                            <option value="Semester-one">Semester-one</option>
+                            <option value="Semester-two">Semester-two</option>
+                            <option value="Semester-three">Semester-three</option>
+                            <option value="Semester-four">Semester-four</option>
+                            <option value="Semseter-five">Semseter-five</option>
+                            <option value="Semester-six">Semseter-Six</option>
+                            <option value="Semseter-seven">Semseter-seven</option>
+                            <option value="Semseter-eight">Semseter-eight</option>
+                        </select>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary" id="btnCourse">Save</button>
+        </div>
+
+        <table class="custom-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+
+                    <th>Course Name</th>
+                    <th>Subjects</th>
+                    <th>Session Year</th>
+                    <th>Term</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody id="Coursetbody">
+
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="attendence" id="attendence">
+
+        <div class="card-header">
+            <h5 class="card-title">Attendence </h5>
+        </div>
+        <div class="card-body">
+            <form role="form">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Course</label>
+                        <select class="form-control" id="attenceOption">
+                            <option value="" selected disabled>select Subject</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Session Year</label>
+                        <select class="form-control" id="AttendenceSession">
+                            <option value="" selected disabled>Select Session Year</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                            <option value="2025-2026">2025-2026</option>
+                            <option value="2026-2027">2026-2027</option>
+                            <option value="2027-2028">2027-2028</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Attendence Date:</label>
+                        <input type="date" class="form-control" placeholder="date" id="attendenceDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Class</label>
+                        <select class="form-control" id="attenceClass">
+                            <option value="" selected disabled>select Class</option>
+                        </select>
+                    </div>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Attendence Check</th>
+                                <th>Fullname</th>
+                                <th>Class</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentlistattendence">
+                            <!-- <tr>
+                                    <td><input type="checkbox" id="checkbox1"></td>
+                                    <td>John Doe</td>
+                                    <td id="status1">Absent</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="checkbox2"></td>
+                                    <td>Jane Smith</td>
+                                    <td id="status2">Absent</td> -->
+                            <!-- </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+
+            </form>
+            <!-- /.card-body -->
+
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn" id="btnAttendence">Save</button>
+        </div>
+    </div>
+    <div class="feedback" id="feedback">
+
+        <div class="card-header">
+            <h5 class="card-title"> Send Feedback Messege</h5>
+        </div>
+        <div class="card-body">
+            <form role="form">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Feedback Messege</label>
+                        <textarea rows="15" id="FeedbackMessege"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="card-footer">
+            <button type="submit" class="btn" id="btnFeedback">Send</button>
+        </div>
+        <table class="custom-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+
+                    <th>ID</th>
+                    <th>feedback Messege</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody id="feedbackTbody">
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="studentLeave" id="studentLeave">
+        <!-- Leave Report Apply for Leave -->
+
+        <div class="card-header">
+            <h5 class="card-title"> Apply for Leave</h5>
+        </div>
+        <div class="card-body">
+            <form role="form">
+                <div class="card-body">
+                    <form role="form">
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>leave Date</label>
+                                <input type="date" id="leaveDate">
+                            </div>
+                            <div class="form-group">
+                                <label>leave Reason</label>
+                                <textarea rows="15" id="leaveReason"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </form>
+        </div>
+
+
+
+        <div class="card-footer">
+            <button type="submit" class="btn" id="btnLeave">Send</button>
+        </div>
+        <table class="custom-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+
+                    <th>ID</th>
+                    <th>Leave Date</th>
+                    <th>Leave Messege</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody id="leaveTbody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="RsultManagement" id="RsultManagement">
+
+        <div class="card-header">
+            <h5 class="card-title"> Add Results</h5>
+        </div>
+        <div class="card-body">
+            <form role="form">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select class="form-control" id="resultSubject">
+                            <option value="" selected disabled>select Subject</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>select Term</label>
+                        <select id="ResultTermoption">
+                            <option value="" selected disabled>select Term</option>
+                            <option value="Semester-one">Semester-one</option>
+                            <option value="Semester-two">Semester-two</option>
+                            <option value="Semester-three">Semester-three</option>
+                            <option value="Semester-four">Semester-four</option>
+                            <option value="Semester-five">Semester-five</option>
+                            <option value="Semester-six">Semester-six</option>
+                            <option value="Semester-seven">Semester-seven</option>
+                            <option value="Semester-eight">Semester-eight</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Class</label>
+                        <select class="form-control" id="resultClass">
+                            <option value="" selected disabled>select the class</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Student Registron No:</label>
+                        <input type="number" class="form-control" placeholder="Student Registron No"
+                            id="resultRegiterNo">
+                    </div>
+                    <div class="formResultDiv">
+                        <div class="formREsult">
+                            <label for="exampleInputEmail1">Assigment Marks: </label>
+                            <input type="number" class="formREsult" placeholder="Student Registron No"
+                                id="assigmentResult">
+                        </div>
+                        <div class="formREsult">
+                            <label for="exampleInputEmail1">Exam Marks: </label>
+                            <input type="number" class="formREsult" placeholder="Student Registron No" id="examResult">
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.card-body -->
+
+            </form>
+            <!-- /.card-body -->
+
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn" id="resultBtn">Save</button>
+        </div>
+    </div>
+
+
+    <div class="feeManagement" id="feeManagement">
+        <div class="card-header">
+            <h5 class="card-title">Student Fee</h5>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label>Registron No:</label>
+                    <input type="number" placeholder="Student Registron Number" id="feeRegNO">
+                </div>
+                <div class="form-group">
+                    <label>Student Class</label>
+                    <select id="FeeStdClass">
+                        <option value="" selected disabled>select class</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>fee Term</label>
+                    <select id="feeOption">
+                        <option value="" selected disabled>select Fee Tern</option>
+                        <option value="Semester-one">Semester-one</option>
+                        <option value="Semester-two">Semester-two</option>
+                        <option value="Semester-three">Semester-three</option>
+                        <option value="Semester-four">Semester-four</option>
+                        <option value="Semester-five">Semester-five</option>
+                        <option value="Semester-six">Semester-six</option>
+                        <option value="Semester-seven">Semester-seven</option>
+                        <option value="Semester-eight">Semester-eight</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Amount Paid: </label>
+                    <input type="number" placeholder="Enter Amount Paid" id="amountPaid">
+                </div>
+                <div class="form-group">
+                    <label>Bank No:</label>
+                    <input type="number" placeholder="Enter Amount Paid" id="bankNO">
+                </div>
+
+
+                <button type="submit" class="btn" id="feeBtn">Submit</button>
+            </form>
+        </div>
+        <table class="custom-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+
+                    <th>Stuent Name</th>
+                    <th>Fee Term</th>
+                    <th>Amount Paid</th>
+                    <th>Bank No</th>
+
+                </tr>
+            </thead>
+            <tbody id="feeetbody">
+
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="resultView" id="resultView">
+        <div class="card-header">
+            <h5 class="card-title"> View Results</h5>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group" id="regView">
+                    <label>Registron No:</label>
+                    <input type="number" placeholder="Student Registron Number" id="regCheck">
+                </div>
+                <button type="submit" class="btn" id="btnSearch">Search</button>
+            </form>
+        </div>
+        <div class="card-bodyOpen" style="display: none;">
+            <div class="card-image">
+                <!-- <img src=" " alt=""> -->
+            </div>
+            <div id="classResult">
+                <h3 class="name"></h3>
+                <h4 class="stdclass"></h4>
+            </div>
+            <h5 class="card-term">Exam Reslts: </h5>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Subjects</th>
+                        <th>Assigment Marks</th>
+                        <th>Exam Mars</th>
+                        <th> Total Marks</th>
+                        <th> Remarks</th>
+                    </tr>
+                </thead>
+                <tbody id="resultViewTbody">
+
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+    <div class="sendMassege" id="sendMassege">
+        <form class="custom-table">
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Student Class</label>
+                    <select id="messageClass">
+                        <option value="" selected disabled>select class</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Messeges</label>
+                    <textarea rows="4" id="message"></textarea>
+                </div>
+                <button type="submit" class="btn" id="sendButton">Send</button>
+
+            </div>
+        </form>
+
+
+    </div>
+
+
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+
+</html>

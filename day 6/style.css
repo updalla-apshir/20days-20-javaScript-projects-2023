@@ -1,0 +1,69 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container{
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #FFf;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1{
+    color: #333;
+}
+p{
+    color: #666;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[type='text']{
+    width: 70%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding-left: 10px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#btn{
+    padding: 10px 20px;
+    background: darkblue;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.messege{
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+
+.success{
+    color: green;
+
+}
+.error{
+    color: red;
+}
+
+.guessed-word{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}

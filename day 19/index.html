@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Music Player</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="music-player">
+        <button class="darkMode" id="darkMode">
+            <i class="fa-solid fa-sun"></i>
+        </button>
+        <img id="song-image" src="songImage.jpeg" />
+        <div class="song-details">
+            <p id="song-artist">Ciyal Xamar</p>
+            <p id="song-name">Big Moha</p>
+        </div>
+        <div class="player-options">
+            <button id="prev">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button id="play">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="pause" class="hide">
+                <i class="fa-solid fa-pause"></i>
+            </button>
+            <button id="next">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+        </div>
+        <audio id="audio" preload="metadata">
+            <source src="BIG MOHA  CIYAAL XAMAR  TALEEX SHOW.mp3" type="audio/mpeg">
+        </audio>
+        <div id="progress-bar">
+            <div id="current-progress"></div>
+        </div>
+        <div class="time-container">
+            <span id="current-time">0:00</span>
+            <span id="max-duration">0:00</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
